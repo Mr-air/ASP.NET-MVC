@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Магазин обуви</title>
+</head>
+<body>
+    <div>
+        <h3>Распродажа обуви</h3>
+        <table>
+            <tr>
+                <td><p>Фирма</p></td>
+                <td><p>Название модели</p></td>
+                <td><p>Размер</p></td>
+                <td><p>Цена</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Shoes)
+            {
+            <tr>
+                <td><p>@b.Firma</p></td>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Size</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p><a href="/Home/Buy/@b.Id">Купить</a></p></td>
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
+
